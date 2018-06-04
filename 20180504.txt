@@ -1,0 +1,8 @@
+// does an ADT have to be a class?
+// Not really:
+struct s {
+  int x;
+  int f(){return x+1;}
+};
+// could also be written
+
