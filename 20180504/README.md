@@ -1,19 +1,25 @@
-// does an ADT have to be a class?
-// Not really:
+### Does an ADT have to be a class?
+Not really:
+```
 struct s {
   int x;
   int f(){return x+1;}
 };
-// could also be written in c as
+```
+Could also be written in c as:
+```
 struct s {
   int x;
 };
 int s_f(struct s* this){return this->x+1;}
+```
 
-// what do classes give you?
-// -guaranteed initializtion and cleanup (ctor, dtor)
-// -access control
-// so we will write a class
+## What do classes give you?
+* guaranteed initializtion and cleanup (ctor, dtor)
+* access control
+
+so we will write a class
+```
 class Rational {
   public:
     Rational(); //default ctor (no args 0/1)
@@ -23,8 +29,8 @@ class Rational {
     /*
      * Rational r{2}; 2/1
      * Rational s=2; 2/1  ---implicit conversion (illegal if flagged explicit)
-     * void f(Rational)   |
-     * f(Rational {2})    -
+     * void f(Rational)   
+     * f(Rational {2})    
      */
 
   private:
@@ -50,21 +56,21 @@ Rational::Rational(int num, int denom):
   numerator_ {num}, denominator_ {denom} {}
 
 Rational::Rational(int num): Rational{num,1} {} // ctor delegation
+```
 
-/* WHY MIL
- * readability because field init is easy to locate
- * improve quality by preventing frogetting init
- * ctor delegation
- * 
- * OBJECT CONSTRUCTION SEQUENCE
- * when an obj is created, 4 things happen
- * 1. space is allocated (stack, heap, whatever)
- * 2. ctor for the superclass part (if any) runs (inheritance)
- * 3. constructors for fields (if they are objects) run
- * 4. constructor body runs
- */
+## WHY MIL
+* readability because field init is easy to locate
+* improve quality by preventing frogetting init
+* ctor delegation
 
-// BEGIN ASIDE:
+## OBJECT CONSTRUCTION SEQUENCE
+* when an obj is created, 4 things happen
+		1. space is allocated (stack, heap, whatever)
+		2. ctor for the superclass part (if any) runs (inheritance)
+		3. constructors for fields (if they are objects) run
+		4. constructor body runs
+## ASIDE:
+```
 class Posn {
   int x,y;
   Posn(){} //default ctor
@@ -85,11 +91,11 @@ Person p;
 // is name initialized?
 // YES, because name is a string and string is a class, therefor it has a ctor (step 3)
 // it is initialized to ""
-
-// END ASIDE
-
-// THE MIL puts feild init in step 3
-// ctor body puts feild init in step 4
+```
+---
+* THE MIL puts feild init in step 3
+* ctor body puts feild init in step 4
+```
 class Person {
     string name_;
   public:
@@ -116,10 +122,11 @@ class Person {
 // that creates invalid objects
 // better: no default ctor for Person
 Person p; // invalid and wont compile
-Person p{"Brad"}; // OK
-Person p{""}; // uh oh
+Person p{\"Brad\"}; // OK
+Person p{\"\"}; // uh oh
 // if its a class invariant that name_ is not empty 
-// don't let this invalid obj be created!
+// don\'t let this invalid obj be created!
 Person::Person(string name): name_ {name} {
-  if(name == "") throw "Bad Name";
+  if(name == \"\") throw \"Bad Name\";
 }
+```
