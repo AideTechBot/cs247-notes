@@ -47,4 +47,28 @@ class Set {
     	1. Verify that ctor establishes invariants
     	1. For each method, assume it holds true, prove/verify method doesn\'t violate invariant at end, done.
     	1. If encapsulation isn\'t broken, representation invariants hold true.
-	
+
+## Representation Exposure (AKA breaking encapsulation)
+* If we give access to the client they can violate our invariants
+* Consider a simple not well encapsulated linked list
+
+```
+class Node {
+				int data_;
+				Node * next = nullptr;
+		public:
+				Node(int d, Node * next = nullptr);
+				~Node() { delete next; }
+				Node * next() { return next_; }
+```
+
+Something is fishy here... what if the client does this:
+
+```
+int main() {
+	Node MyList = Node(1, new Node(2, new Node(3, nullptr)));
+	Node MyList2 = Node(0, &myList);
+```
+We need R:
+* next_ is either the nullptr or a valid ptr to a heap allocated Node.
+* _FORALL_ q,p in Nodes, q!=p && q.next_ != nullptr --> q.next_ != p.next_
