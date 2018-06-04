@@ -69,7 +69,8 @@ Rational::Rational(int num): Rational{num,1} {} // ctor delegation
 	1. ctor for the superclass part (if any) runs (inheritance)
 	1. constructors for fields (if they are objects) run
 	1. constructor body runs
-## ASIDE:
+### ASIDE:
+---
 ```
 class Posn {
   int x,y;
