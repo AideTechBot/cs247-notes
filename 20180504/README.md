@@ -65,10 +65,10 @@ Rational::Rational(int num): Rational{num,1} {} // ctor delegation
 
 ## OBJECT CONSTRUCTION SEQUENCE
 1. when an obj is created, 4 things happen
-		1. space is allocated (stack, heap, whatever)
-		1. ctor for the superclass part (if any) runs (inheritance)
-		1. constructors for fields (if they are objects) run
-		1. constructor body runs
+	1. space is allocated (stack, heap, whatever)
+	1. ctor for the superclass part (if any) runs (inheritance)
+	1. constructors for fields (if they are objects) run
+	1. constructor body runs
 ## ASIDE:
 ```
 class Posn {
