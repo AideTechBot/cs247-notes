@@ -20,7 +20,7 @@ Consider a set of Ints ADTs
 
 R(no duplicates)
 Arrays(R) | Int Set
-==========|========
+----------|--------
 [] | []
 [1] | [1]
 [1,2], [2,1] | [1,2]
@@ -40,10 +40,11 @@ class Set {
 ```
 
 1. No duplicate elements
-  1. FORALL i,j {0, ..., size_-1} i:=j | elements_[i] != elements_[j]. 
-  1. 2 Choices for now to represent this as an array with doubling strategy.
-  1. All elements in our set are stored in indicies 0, ..., size_-1 of elements_.
-  1. Check that each method preserves invariants
-    1. Verify that ctor establishes invariants
-    1. For each method, assume it holds true, prove/verify method doesn\'t violate invariant at end, done.
-    1. If encapsulation isn\'t broken, representation invariants hold true.
+  	1. FORALL i,j {0, ..., size_-1} i:=j | elements_[i] != elements_[j]. 
+  	1. 2 Choices for now to represent this as an array with doubling strategy.
+  	1. All elements in our set are stored in indicies 0, ..., size_-1 of elements_.
+  	1. Check that each method preserves invariants
+    	1. Verify that ctor establishes invariants
+    	1. For each method, assume it holds true, prove/verify method doesn\'t violate invariant at end, done.
+    	1. If encapsulation isn\'t broken, representation invariants hold true.
+	
