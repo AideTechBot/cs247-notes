@@ -1,0 +1,15 @@
+Q1
+
+I'm using O as big theta because im not doing this in latex.
+
+John: 
+-Best: O(n)
+-Worst: O(n^2)
+-Average: 1/n*O(nlogn) + 1/n*O(n^2) + (n-2)/n*O(n) = O(n)
+
+Sajed: 
+-Best: O(n)
+-Worst: O(n^2)
+-Average: 1/n*O(n^2) + 1/n*O(n) + (n-2)/n*O(nlogn) = O(nlogn)
+
+
