@@ -1,47 +1,54 @@
-// Accessors (getters)
-// -methods that return the value of a member field
-// Mutators (setters)
-// -methods that allow for the setting of member fields
+**Accessors (getters)**
+- methods that return the value of a member field
+**Mutators (setters)**
+- methods that allow for the setting of member fields
 
-// Restricts usage of memebr fields to only those we 
-// give access to through the interface
 
-// only allows usage of memember fields under our ADT's conditions
+Restricts usage of memebr fields to only those we give access to through the interface.
+Only allows usage of memember fields under our ADT's conditions.
 
-// Common naming conventions:
-// attribute, getAttribute(), setAttribute()
-// attribute, attribute(), attributeIs()
+### Common naming conventions
+- attribute, getAttribute(), setAttribute()
+- attribute, attribute(), attributeIs()
 
-// Should it be a member?
-// - only it if has to be
+### Should it be a member?
+> Only it if has to be
+- ctors, dtors, accessors, mutators
+- virtual method
+- Cannot be writted with only ADTs public interface (needs access to internals):
+  - Could also be a friend (only if it cant be a member)
+- Certain operators (as per c++ standard) must be members
+  - operator=, operator[], operator(), operator->, operatorT (where T is a type, (type conversion))
 
-// ctors, dtors, accessors, mutators
-// virtual method
-// cannot be writted with only ADTs public interface (needs access to internals):
-//  -could also be a friend (only if it cant be a member)
 
-// certain operators (as per c++ standard) must be members
-// - operator=, operator[], operator(), operator->, operatorT (where T is a type, (type conversion))
-
-// some functions cant (at least if we want them to work properly) be members
-// in >> x;
-// out << x;
-// if they where written as members :
+Some functions can't (at least if we want them to work properly) be members.
+```cpp
+in >> x;
+out << x;
+```
+If they where written as members :
+```cpp
 class Rational {
   istream & operator>>(istream & in) {
     ...
     return in;
   }
 };
-
-// this would make it
+```
+^This would make it:
+```cpp
 r >> cin;
-// this is ugly
+```
+Do not do that, it's god awful.
 
-// another cool thing: always returns the input stream to chain stuff like
+
+Another cool thing: always return the input stream to chain stuff like:
+```cpp
 cin >> x >> y >> z;
-
-// for rationals:
+```
+---
+### Rationals
+```cpp
 class Rational {
   public:
     ...
@@ -69,25 +76,22 @@ ostream & operator<< (ostream & out, const Rational & r) {
   out << r.numerator() << "/" << r.denominator();
   return out;
 }
-
-// otherwise prefer non friend, non member functions
-// - better encapsulation
-// - compier ensures accesses cannot be made to private components
-// - more flexible packaging of data
-//    (declarations of standalone functions can be spread across files, client can include only
-//    subsets of functions)
-
-// BEST PRACTICES
-// - All data members are private
-// - mutators/accessors for the fields that make sense
-// - if a non member function needs full acess and can't be a member function;
-//   then make it a friend
-
-// Also:
-// classes can be friends!
-// often used when we have nested classes
-// alternatively if a nested class is private, it could just be a struct
-
+```
+Otherwise, prefer non friend/non member functions because:
+- Better encapsulation
+- Compier ensures accesses cannot be made to private components
+- More flexible packaging of data
+  - Declarations of standalone functions can be spread across files, client can include only subsets of functions.
+---
+### Best practices
+- All data members are private
+- Mutators/accessors for the fields that make sense
+- If a non member function needs full acess and can't be a member function, then make it a friend.
+**Also:**
+- Classes can be friends!
+  - Often used when we have nested classes.
+  - Alternatively if a nested class is private, it could just be a struct.
+```cpp
 class Stack {
   public:
     Stack();
@@ -107,6 +111,5 @@ class Stack {
   private:
     Node * top_;
 };
-
-// here, Node could be (and probably should be) a private struct
-// there is no reason for client to use Node objects
+```
+In the code above, Node could be (and probably should be) a private struct. There is no reason for client to use Node objects.

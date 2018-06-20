@@ -1,7 +1,7 @@
 What do we need for the code in 20180502.txt?
 1. default ctor
 2. copy ctor
-3. + operator, * operator, == operator
+3. \+ operator, * operator, == operator
 4. input/outputoperator
 
 ### Rational Constructor
