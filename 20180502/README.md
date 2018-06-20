@@ -1,4 +1,5 @@
-// SECTION 1
+# SECTION 1
+```cpp
 #include <iostream>
 using namespace std;
 int main() {
@@ -12,3 +13,4 @@ int main() {
   cout << r << " * " << s << " = " << r * s << endl;
   cout << r << " = " << s << " is " << (r == s) << endl; // output, +, *, ==
 }
+```
