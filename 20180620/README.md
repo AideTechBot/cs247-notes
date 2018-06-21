@@ -53,7 +53,7 @@ class DigitalMedia {
     virtual void play() = 0;
     virtual ~DigitalMedia();
 };
-
+```
 
 ##### Translated to NVI:
 ```cpp
