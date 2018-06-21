@@ -26,7 +26,7 @@ Similarly we come up with an **abstraction function** A, that map from valid sta
 Consider a set of Ints ADTs:
 
 
-R(no duplicates)
+R(no duplicates):
 
 
 Arrays(R) | Int Set
