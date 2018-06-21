@@ -86,6 +86,6 @@ class IntStack {
 ### Terminology
 - An "interface specification" describes the behaviour of some software unit (fn or class).
 - A implementation "satisfies" a spec if it conforms to the defined behaviour.
-// - The "specification set" of a specification is the set of all conforming implementations.
+- The "specification set" of a specification is the set of all conforming implementations.
 
 
