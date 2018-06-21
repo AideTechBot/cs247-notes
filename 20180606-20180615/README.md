@@ -33,7 +33,7 @@ int main() {
 We need $R$.
 
 - next_ is either the nullptr or a valid pointer to a heap allocated Node.
-- $\forall o, p \in Nodes$, o \neq p \land o.next\_ \Rightarrow o.next\_ \neq p.next\_$.
+- $\forall o, p \in Nodes, o \neq p \land o.next\_ \Rightarrow o.next\_ \neq p.next\_$.
 
 # Iterator Pattern
 
