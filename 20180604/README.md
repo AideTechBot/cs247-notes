@@ -27,6 +27,8 @@ Consider a set of Ints ADTs:
 
 
 R(no duplicates)
+
+
 Arrays(R) | Int Set
 --- | ---
 [] | []
