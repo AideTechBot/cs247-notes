@@ -28,7 +28,7 @@ Node::Node Node & operator= (const Node & other) {
   return *this;
 }
 ```
-So to prevent the program from crashsing when new throws an error:
+So to prevent the program from crashing when new throws an error:
 ```cpp
 Node & Node & operator= (const Node & other) {
   if(this == &other) return *this;

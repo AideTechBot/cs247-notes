@@ -1,19 +1,25 @@
-// REVIEW
-MyClass getThing() { // RIGHT
+# REVIEW
+Right way to do things
+```cpp
+MyClass getThing() {
   MyClass T{...};
   return T;
 }
-
+```
+Retuening an alias/pointer to an object that doesn't exist:
+```cpp
 MyClass & getThing() {
   MyClass T{...};
-  return T; // returning an alias to an object that doesnt exist
+  return T; 
 }
 
 MyClass * getThing() {
   MyClass T{...};
-  return &T; // same as #2
+  return &T; 
 }
-
+```
+Returning a pointer/ref to something on the heap:
+```cpp
 MyClass * getThing() {
   MyClass * T = new MyClass{}; // the user needs to be aware they need to cleanup the pointer
   return T;
@@ -23,12 +29,15 @@ MyClass & getThing() {
   MyClass * T new MyClass{...};
   return *T;
 }
-
-// to delete the obj you need to do:
+```
+To delete the obj you need to do:
+```cpp
 MyClass & x = getThing();
 delete &x;
-
-
+```
+---
+### Example with move constructor
+```cpp
 class Node {
   Node(int elem, Node * next);
   Node(const Node & n);
@@ -61,37 +70,23 @@ Node & Node::operator=(Node && other) {
   swap(other);
   return *this;
 }
+```
+### BY default, C++ gives you:
+- A default ctor (disappears as soon as any other ctor is written)
+- copy ctor (copies all the fields)
+- dtor (does nothing)
+- Copy assignment operator (copy assigns all fields)
+- Move ctor (identical to built in copy ctor, disappears if you write a copy ctor)
+- Move AO (samething but with CAO)
 
-// BY default, C++ gives you:
-// - a default ctor (disappears as soon as any other ctor is written)
-// - copy ctor (copies all the fields)
-// - dtor (does nothing)
-// - Copy assignment operator (copy assigns all fields)
-// - move ctor (identical to built in copy ctor, disappears if you write a copy ctor)
-// - move AO (samething but with CAO)
+### When are the builtins insufficient?
+- When you own a resource
+- You have logical/semantic meaning to these operations/your objects
 
-// When are the builtins insufficient?
-// - when you own a resource
-// - you have logical/semantic meaning to these operations/your objects
+### Rules of thumb:
+- BIG 5: (COPY CTOR, MOVE CTOR, CAO, MAO, DTOR)
+- If you need one, you need all 5 (generally)
 
-// Rules of thumb:
-// - BIG 5: (COPY CTOR, MOVE CTOR, CAO, MAO, DTOR)
-// - if you need one, you need all 5
-
-// move and copy illision
-// - compiler optimizes but just calling the basic ctor
-// - dont have to know when it occurs but that it does
-
-// Entity vs value
-//
-// ENTITY:
-// - computer embodiement of irl
-// - each object has a unique entity
-// - objects with the same attributes values does not imply they are the same
-// example:
-// - physical objects airplane, runway, taxiway
-// - people, passengers, booking agent
-// - records: customer info, boarding pass
-// - transactions: reservations, cancellations, receipts
-//
-// VALUE:
+### Move and copy elision
+- Compiler optimizes but just calling the basic ctor
+- Don't have to know when it occurs but that it does
