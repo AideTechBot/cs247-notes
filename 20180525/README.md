@@ -1,11 +1,11 @@
 ## Interface Specification
 
-> **Precondition**: Constraints that must hold before the function is called. 
-> **Postconditions**: Constraints that hold after the function is called. 
-> **Modifies**: The objects/variables this function may modify.
-> **Throws**: Exceptions your function may throw, and conditions under which they are thrown.
-> **Ensures**: Guaranteed side effects on modified objects.
-> **Returns**: Describes return value.
+> **Precondition**: Constraints that must hold before the function is called.  
+> **Postconditions**: Constraints that hold after the function is called.  
+> **Modifies**: The objects/variables this function may modify.  
+> **Throws**: Exceptions your function may throw, and conditions under which they are thrown.  
+> **Ensures**: Guaranteed side effects on modified objects.  
+> **Returns**: Describes return value.  
 
 
 **Example**:
