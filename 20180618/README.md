@@ -1,3 +1,11 @@
+## Decorator Pattern
+
+Suppose you want to enhance an object (e.g. adding functionality or features).
+
+**Example**: Windowing System. We start with a basic window, and then add a toolbar, scrollbar, and a menu. We want the user to be able to choose these at runtime.
+
+![](https://i.imgur.com/0tFP1IZ.jpg?1)
+
 - Every decorator is a component and every decorator has a component.
 - For example a window with a scrollbar is a window, but it also has a pointer to the underlying plain window.
 - A window with a menu + a scrollbar is a window, but it also has a ptr to the window with a scroll bar, which also has a ptr to the base window.
