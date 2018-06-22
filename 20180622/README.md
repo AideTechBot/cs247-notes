@@ -1,3 +1,5 @@
+# June 22 2018
+
 # IMAGE 1
 
 - Favor composition over inheritance.
