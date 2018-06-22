@@ -1,6 +1,6 @@
 # June 22 2018
 
-# IMAGE 1
+![https://drive.google.com/open?id=1X6Gbs8XnJfmPFZwkbD-qiZrDxiPX3MrL]()
 
 - Favor composition over inheritance.
 - Choose object adapter unless you absolutely need class adapter
