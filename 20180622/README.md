@@ -17,7 +17,7 @@ Client or subsystem interacts with multiple (complex?) classes.
 - Create a single, simplified **Interface class**.
 - Restrict & simplify the client's (or subsystem's) interactions witht he complex subsystem's classes.
 
-# IMAGE 2
+![diagram2](diagram_2.jpg?raw=true)
 
 - When the subsystem interface changes, only need to update the Facade.
 - Supports teamwork, not everyone needs to understand the complex subsystem.
@@ -36,7 +36,7 @@ Important to note: original subsystem is still there, it is still available for 
 - Have ABC for algorithm.
 - Use inheritance to specialize.
 
-# IMAGE 3
+![diagram3](diagram_3.jpg?raw=true)
 
 Quite similar to the Factory Pattern. The difference is that this is not strictly about creating objects, and you can swap strats at runtime.
 
@@ -45,6 +45,6 @@ Quite similar to the Factory Pattern. The difference is that this is not strictl
 
 **Example:** Card player changes strategies based on the context of game.
 
-# IMAGE 4
+![diagram4](diagram_4.jpg?raw=true)
 
 # CODE 1 (uploaded by prof)
