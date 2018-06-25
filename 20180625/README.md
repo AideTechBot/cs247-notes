@@ -78,7 +78,7 @@ Game state and communication are two things, so we are not respecting this.
 - **View:** how the model is displayed to the user.
 - **Controller:** how the model is manipulated.
 
-# IMAGE 2
+![diagram1](diagram_1.jpg?raw=true)
 
 The **model**:
 - Can have multiple views (eg: grapics/text)
