@@ -78,4 +78,18 @@ Game state and communication are two things, so we are not respecting this.
 - **View:** how the model is displayed to the user.
 - **Controller:** how the model is manipulated.
 
+# IMAGE 2
+
+The **model**:
+- Can have multiple views (eg: grapics/text)
+- Doesn't need to know about their details.
+- Could be implemented as a classic observer, or could communicate through controller.
+
+
+The **controller**:
+- Mediates communication between model and view
+- May encapsulate turn-taking, or full game rules (trade-off with model)
+- May communicate with the user for input. (Or that could be the view)
+
+
 
