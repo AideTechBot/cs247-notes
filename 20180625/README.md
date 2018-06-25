@@ -24,3 +24,10 @@
 High coupling is bad because:
 - Changes to one module require greater changes to another.
 - Harder to reuse individual modules.
+
+### Cohesion
+**Cohesion:** How closely elements of a module are related to eachother.
+- (low) arbitrary grouping of unrelated element. eg: `<utility>`
+- Elements that share a common theme, otherwise unrelated. eg: `<algorithm>`
+- Elements that manipulate the state over the lifetime of an entity. eg: opens/reads from/writes to/closes files
+- (high) Elements cooperate to perform exactly one task.
