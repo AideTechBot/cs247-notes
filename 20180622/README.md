@@ -47,4 +47,4 @@ Quite similar to the Factory Pattern. The difference is that this is not strictl
 
 ![diagram4](diagram_4.jpg?raw=true)
 
-# CODE 1 (uploaded by prof)
+#### See strategy.zip for sample code relating to the diagram above
