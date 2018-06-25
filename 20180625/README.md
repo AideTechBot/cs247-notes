@@ -74,4 +74,8 @@ Game state and communication are two things, so we are not respecting this.
 
 ### Model - View - Controller (MVC)
 - Seperate the distinct notions of data(state), the presentation of the data, and the control of the data(or system).
+- **Model:** the main data you are manipulating (e.g. game state)
+- **View:** how the model is displayed to the user.
+- **Controller:** how the model is manipulated.
+
 
