@@ -47,8 +47,8 @@ Hero * hero = static_cast<Hero*>(h);
 Hero * h2 = new HeroTeam();
 Hero * hero2 = static_cast<Hero*>(h2);
 ```
-    - You run into problems doing this...
-    - You are telling the compiler "trust me, I know what I'm doing" which is dangerous.
+- You run into problems doing this...
+- You are telling the compiler "trust me, I know what I'm doing" which is dangerous.
 ---
 - This doesn't solve our problem, it mearly pushes it around.
 - We can make HeroTeamIter::operator!= compile, but it's still incorrect.
